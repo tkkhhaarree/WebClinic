@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    <title>Add Composition</title>
+    <script src="js/compadd.js"></script>
+    <style type="text/css">
+        html {
+            background-image: url('abc.jpg');
+        }
+
+        button.addcomp {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        button.addcomp:hover {
+            background: #383;
+        }
+
+        a:link {
+            color: #93add8;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        /* selected link */
+        a:active {
+            color: green;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: #111;
+        }
+        input.addehr {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        input.addehr:hover {
+            background: #383;
+        }
+
+    </style>
+</head>
+<body background="{% static 'images/abc.jpg' %}">
+<ul>
+  <li><a href="">Home</a></li>
+  <li><a href="">Add EHR</a></li>
+  <li><a onclick="">Logout</a></li>
+</ul>
+<div align="left">
+    <h2><u>Enter details for new Composition:</u></h2><br>
+    <form method="post" action="{% url 'ehrs:compsuccess' %}">
+    {% csrf_token %}
+        {% for f, n in zipped %}
+            {{ f }}<br>
+            <input type="text" name="{{ n }}" id="{{ n }}"><br><br>
+        {% endfor %}
+        <input type="submit" value="Create Composition." class="addehr">
+
+    </form>
+</div>
+</body>
+</html>

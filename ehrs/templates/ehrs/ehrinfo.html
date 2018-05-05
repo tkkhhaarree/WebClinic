@@ -1,0 +1,134 @@
+{%  load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EHR Information</title>
+	<script src="js/ehrinfo.js"></script>
+	<style type="text/css">
+
+		a { cursor: pointer; }
+		a { cursor: pointer; }
+	pre.one {
+    border-style: solid;
+    border-width: 1px;
+}
+pre.two {
+    border-style: solid;
+    border-width: 1px;
+}
+
+a:link {
+    color: #93add8;
+}
+
+/* visited link */
+
+/* mouse over link */
+a:hover {
+    color: red;
+}
+
+/* selected link */
+a:active {
+    color: green;
+}
+button.addcomp {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+input.addehr {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        input.addehr:hover {
+            background: #383;
+        }
+
+div {
+    box-shadow: 10px 10px 1px #888888;
+}
+pre {
+    border-style: solid;
+    border-width: 1px;
+}
+button.addcomp:hover{
+     background: #383;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+	</style>
+
+</head>
+<body background="{% static 'images/abc.jpg' %}">
+<ul>
+  <li><a href="">Home</a></li>
+  <li><a href="">Add EHR</a></li>
+  <li><a onclick="">Logout</a></li>
+</ul>
+
+<div align="left">
+	<h3><u><span style="color: black; ">EHR Information</span></u></h3>
+	<font size="4" face="verdana" color="blue"><b><pre id="ehrinfo" class="one">{{ ehrinfo_resp }}</pre></b></font>
+	<br><br>
+	<h3><u><span style="color: black; ">Compositions for EHR</span></u></h3>
+	<span style="font-size: medium; font-family: verdana; color: black; "><pre class="two" id="comp">
+        {% for a, x, y in zipped %}
+            <a href="{% url 'ehrs:compdisplay' uid a %}">{{ x }}</a>
+            {{ y }}
+        {% endfor %}
+    </pre></span>
+	<br><br>
+	<h3><u><span style="color: black; ">Create Composition</span></u></h3>
+    <form action="{% url 'ehrs:compcreate' %}" method="GET">
+        <select name="template">
+            <option value="Vital Signs">Vital Signs</option>
+            <option value="Cancer Signs">Cancer Signs</option>
+        </select><br><br>
+        <input type="submit" value="Select Template" class="addehr">
+    </form>
+
+
+</div>
+</body>
+</html>

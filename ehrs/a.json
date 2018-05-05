@@ -1,0 +1,124 @@
+{
+  "versions": {
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@xmlns": "http://schemas.openehr.org/v1",
+    "version": {
+      "@xsi:type": "ORIGINAL_VERSION",
+      "contribution": {
+        "id": {
+          "@xsi:type": "HIER_OBJECT_ID",
+          "value": "f65421a5-6698-4603-976e-aa3dc541353"
+        },
+        "namespace": "EHR::COMMON",
+        "type": "CONTRIBUTION"
+      },
+      "commit_audit": {
+        "system_id": "CABOLABS_EHR",
+        "committer": {
+          "@xsi:type": "PARTY_IDENTIFIED",
+          "external_ref": {
+            "id": {
+              "@xsi:type": "HIER_OBJECT_ID",
+              "value": "cc193f71-f5fe-438a-87f9-81e74302eede"
+            },
+            "namespace": "DEMOGRAPHIC",
+            "type": "PERSON"
+          },
+          "name": "Dr. House"
+        },
+        "time_committed": {
+          "value": "20161005T022250,000-0300"
+        },
+        "change_type": {
+          "value": "creation",
+          "defining_code": {
+            "terminology_id": {
+              "value": "openehr"
+            },
+            "code_string": 249
+          }
+        }
+      },
+      "uid": {
+        "value": "0c708601-558a-4d34-9694-fcd76473f13::EMR::1"
+      },
+      "data": {
+        "@archetype_node_id": "openEHR-EHR-COMPOSITION.signos.v1",
+        "@xsi:type": "COMPOSITION",
+        "name": {
+          "value": "Signos vitales"
+        },
+        "uid": {
+          "@xsi:type": "HIER_OBJECT_ID",
+          "value": "2442ad59-f5e9-4a73-9ee5-7488015074d4"
+        },
+        "archetype_details": {
+          "archetype_id": {
+            "value": "openEHR-EHR-COMPOSITION.signos.v1"
+          },
+          "template_id": {
+            "value": "Signos"
+          },
+          "rm_version": "1.0.2"
+        },
+        "language": {
+          "terminology_id": {
+            "value": "ISO_639-1"
+          },
+          "code_string": "es"
+        },
+        "territory": {
+          "terminology_id": {
+            "value": "ISO_3166-1"
+          },
+          "code_string": "UY"
+        },
+        "category": {
+          "value": "event",
+          "defining_code": {
+            "terminology_id": {
+              "value": "openehr"
+            },
+            "code_string": 433
+          }
+        },
+        "composer": {
+          "@xsi:type": "PARTY_IDENTIFIED",
+          "external_ref": {
+            "id": {
+              "@xsi:type": "HIER_OBJECT_ID",
+              "value": "cc193f71-f5fe-438a-87f9-81ecb302eede"
+            },
+            "namespace": "DEMOGRAPHIC",
+            "type": "PERSON"
+          },
+          "name": "Dr. House"
+        },
+        "context": {
+          "start_time": {
+            "value": "20161005T022250,000-0300"
+          },
+          "setting": {
+            "value": "Hospital Montevideo",
+            "defining_code": {
+              "terminology_id": {
+                "value": "openehr"
+              },
+              "code_string": 229
+            }
+          }
+        },
+        "content": []
+      },
+      "lifecycle_state": {
+        "value": "completed",
+        "defining_code": {
+          "terminology_id": {
+            "value": "openehr"
+          },
+          "code_string": 532
+        }
+      }
+    }
+  }
+}
